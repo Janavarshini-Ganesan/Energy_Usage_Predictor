@@ -603,12 +603,10 @@ shrink weak features while letting correlated ones share the credit.
             )
 
 if __name__ == "__main__":
-    import os
-
     demo.launch(
-        server_name="0.0.0.0",
-        server_port=int(os.environ.get("PORT", 7860)),
         theme=THEME,
         css=CSS,
-        js=FORCE_DARK
+        js=FORCE_DARK,
+        server_name="0.0.0.0",
+        server_port=int(os.environ.get("PORT", 7860)),
     )
