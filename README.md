@@ -70,11 +70,7 @@ If the saved model is missing or was pickled with an incompatible scikit-learn v
 Deploy on Render
 1. Push the project to a GitHub repo (same as your other days).
 2. On render.com, sign in with GitHub → New → Web Service → select the repo.
-3. Fill in:
-a. Root Directory: blank (repo root)
-b. Build Command: pip install -r requirements.txt && python train.py
-c. Start Command: python app.py
-d. Instance Type: Free
+3. Fill in: Root Directory: blank (repo root) → Build Command: pip install -r requirements.txt && python train.py → Start Command: python app.py → Instance Type: Free
 4. Deploy. Watch the Logs tab — first build takes a few minutes since it trains the model.
 5. Your app is live at https://<your-service-name>.onrender.com
 
