@@ -67,20 +67,16 @@ python train.py          # writes model_elasticnet.pkl and model_info.json
 If the saved model is missing or was pickled with an incompatible scikit-learn version,
 `app.py` retrains automatically on startup.
 
-## Deploy on Koyeb
-
-WattWise is deployed as a Gradio web application on Koyeb.
-
-1. Push the project to GitHub.
-2. Create a free account on Koyeb.
-3. From the Koyeb dashboard, select **Create Service → Web Service**.
-4. Select **GitHub** as the deployment source.
-5. Choose this repository and the `main` branch.
-6. Select **Buildpack** as the builder.
-7. Set the run command to:
-      python app.py
-8. Select the available Free Instance.
-9. Click Deploy.
+Deploy on Render
+1. Push the project to a GitHub repo (same as your other days).
+2. On render.com, sign in with GitHub → New → Web Service → select the repo.
+3. Fill in:
+      Root Directory: blank (repo root)
+      Build Command: pip install -r requirements.txt && python train.py
+      Start Command: python app.py
+      Instance Type: Free
+4. Deploy. Watch the Logs tab — first build takes a few minutes since it trains the model.
+5. Your app is live at https://<your-service-name>.onrender.com
 
 ## Project structure
 ```
